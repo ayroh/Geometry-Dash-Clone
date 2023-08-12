@@ -6034,7 +6034,7 @@ Transform:
   m_Children:
   - {fileID: 1849513006}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &269728962 stripped
 Transform:
@@ -6328,7 +6328,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &425511018
 PrefabInstance:
@@ -6656,7 +6656,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &519420033
 MonoBehaviour:
@@ -6990,7 +6990,7 @@ Transform:
   - {fileID: 16272948}
   - {fileID: 243381294}
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &647301215
 GameObject:
@@ -7621,7 +7621,7 @@ Transform:
   - {fileID: 338218324}
   - {fileID: 186811162}
   m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &803638799
 MonoBehaviour:
@@ -7639,9 +7639,9 @@ MonoBehaviour:
   spriteTransform: {fileID: 338218324}
   particle: {fileID: 1130768579}
   movementSpeed: 8
-  flyForce: 0.15
+  flyForce: 0.5
   maxFlyVelocity: 7
-  flyMaxRotation: 40
+  flyMaxRotation: 50
 --- !u!4 &803951785 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4867255481227714279, guid: c4f741895b461c44fbe1bdb3661067ee, type: 3}
@@ -8257,7 +8257,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &980321646
 PrefabInstance:
@@ -8516,7 +8516,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1027079111 stripped
 Transform:
@@ -14137,7 +14137,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &1268636172
 BoxCollider2D:
@@ -15043,7 +15043,7 @@ Transform:
   - {fileID: 773889523}
   - {fileID: 873563220}
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1615425157
 PrefabInstance:
@@ -15232,7 +15232,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1659682127 stripped
 Transform:
@@ -15305,7 +15305,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 13
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1712164937
 PrefabInstance:
@@ -16158,7 +16158,7 @@ Transform:
   m_Children:
   - {fileID: 647301216}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1982457371 stripped
 Transform:
