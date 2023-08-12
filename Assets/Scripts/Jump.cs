@@ -53,17 +53,22 @@ public class Jump : Mechanic
 
     private IEnumerator LerpRotationInSeconds() {
         isGrounded = false;
-        var timePassed = 0f;
+        float timePassed = 0f;
+
         float initialZRot = spriteTransform.rotation.eulerAngles.z;
         float finalRot = spriteTransform.rotation.eulerAngles.z % 90;
+
+        // Choice of rotation forward or backward
         if (finalRot > 60) {
             finalRot = spriteTransform.rotation.eulerAngles.z + (90 - finalRot);
         }
         else {
             finalRot = spriteTransform.rotation.eulerAngles.z - finalRot;
         }
+
+        // Lerp in seconds
         while (timePassed < rerotateSpeed) {
-            var factor = timePassed / rerotateSpeed;
+            float factor = timePassed / rerotateSpeed;
             spriteTransform.rotation = Quaternion.Euler(new Vector3(0f, 0f, Mathf.Lerp(initialZRot, finalRot, factor)));
             timePassed += Time.deltaTime;
             yield return null;

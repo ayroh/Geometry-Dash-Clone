@@ -12,7 +12,6 @@ public abstract class Mechanic : MonoBehaviour
     [Header("Speed")]
     [SerializeField] protected float movementSpeed = 2f;
 
-
     protected bool isGrounded = false;
 
 

@@ -9,21 +9,17 @@ public class Fly : Mechanic
     [SerializeField] private float maxFlyVelocity = 7;
     [SerializeField] private float flyMaxRotation = 30;
 
-    private void Update() {
+    private void FixedUpdate() {
         if (Input.GetKey(KeyCode.Mouse0)) {
-            if(rb2d.velocity.y >= maxFlyVelocity)
-                rb2d.velocity = new Vector3(movementSpeed, maxFlyVelocity, 0f);
-            else
-                rb2d.velocity = new Vector3(movementSpeed, rb2d.velocity.y + flyForce, 0f);
+            // Use maxFlyVelocity if current velocity is more than max velocity
+            rb2d.velocity = new Vector3(movementSpeed, Mathf.Min(maxFlyVelocity, rb2d.velocity.y + flyForce), 0f);
         }
         else if (isGrounded) {
             rb2d.velocity = new Vector3(movementSpeed, 0f, 0f);
         }
         else {
-            if (rb2d.velocity.y <= -maxFlyVelocity)
-                rb2d.velocity = new Vector3(movementSpeed, -maxFlyVelocity, 0f);
-            else
-                rb2d.velocity = new Vector3(movementSpeed, rb2d.velocity.y - flyForce, 0f);
+            // Use -maxFlyVelocity if current velocity is loss than negative max velocity
+            rb2d.velocity = new Vector3(movementSpeed, Mathf.Max(-maxFlyVelocity, rb2d.velocity.y - flyForce), 0f);
         }
         spriteTransform.rotation = Quaternion.Euler(new Vector3(0f, 0f, rb2d.velocity.y * flyMaxRotation / maxFlyVelocity));
     }

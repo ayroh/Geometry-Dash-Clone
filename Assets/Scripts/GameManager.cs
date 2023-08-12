@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
 using System;
-using UnityEngine.Animations;
 
 public class GameManager : MonoBehaviour
 {
+    public enum GameState { Jump, Fly, Restarting, MainMenu };
 
     [Header("Square")]
     [SerializeField] private GameObject square;
@@ -28,19 +28,18 @@ public class GameManager : MonoBehaviour
     // Singleton
     public static GameManager instance;
 
-    public enum GameState { Jump, Fly, Restarting, MainMenu };
     public GameState gameState;
 
 
     private void Awake() => instance = this;
 
+
     void Start() => gameState = GameState.MainMenu;
-
-    public void Restart() => ChangeState(GameState.Restarting);
-
-    public void StartGame() => ChangeState(GameState.Jump);
+    
 
     private void ChangeState(GameState state) {
+
+        // Organise current game state 
         switch (gameState) {
             case GameState.Jump:
                 squareJump.StopAllCoroutines();
@@ -60,32 +59,42 @@ public class GameManager : MonoBehaviour
 
         gameState = state;
 
+        // Apply new game state
         switch (state) {
             case GameState.Jump:
+                // Camera
                 mainCam.ChangeColor();
-
                 mainCam.enabled = true;
 
+                // Open Jump script
                 squareJump.enabled = true;
                 squareJump.ParticleState(true);
 
+                // Apply Gravity
                 Physics2D.gravity = new Vector2(0f, gravity);
+
                 squareCollider.enabled = true;
                 break;
             case GameState.Fly:
+                // Camera
                 mainCam.ChangeColor();
 
+                // Open Fly script
                 squareFly.enabled = true;
                 squareFly.ParticleState(true);
 
+                // Remove Gravity
                 Physics2D.gravity = Vector2.zero;
                 squareCollider.enabled = true;
                 break;
             case GameState.Restarting:
+                // Disable Collider
                 squareCollider.enabled = false;
 
+                // End last state velocity
                 squareRb.velocity = Vector2.zero;
 
+                // Dotween animations on death
                 square.transform.DOMove(startPosition.position, 1f);
                 mainCam.enabled = false;
                 mainCam.transform.DOMove(new Vector3(startPosition.position.x + mainCam.offset.x, 0f, startPosition.position.z + mainCam.offset.z), 1f);
@@ -101,6 +110,11 @@ public class GameManager : MonoBehaviour
     }
 
     public void Portal() => ChangeState(GameState.Fly);
+
+    public void StartGame() => ChangeState(GameState.Jump);
+
+    public void Restart() => ChangeState(GameState.Restarting);
+
 
     public void MusicOnOff() {
         if (music.isPlaying)
